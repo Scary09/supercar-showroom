@@ -1,0 +1,59 @@
+[
+  {
+    "id": "porsche-918",
+    "brand": "Porsche",
+    "name": "918 Spyder",
+    "year": "2015",
+    "subtitle": "4.6L Naturally Aspirated V8 Hybrid",
+    "modelPath": "/models/porsche-918/scene.gltf",
+    "specs": {
+      "hp": "887 HP",
+      "speed": "214 MPH",
+      "zeroSixty": "2.5s",
+      "engine": "4.6L V8 + Dual e-Motors"
+    },
+    "hotspots": [
+      { "id": "engine", "label": "4.6L V8 Powertrain", "detail": "9,150 RPM dry-sump race V8 vented by top-exit pipes.", "position": [0, 0.9, 0.4] },
+      { "id": "cockpit", "label": "Monocoque Cockpit", "detail": "Full carbon fiber tub with elevated glass console.", "position": [0.35, 0.8, -0.3] },
+      { "id": "spoiler", "label": "Active Aerodynamics", "detail": "Electro-hydraulic multi-stage downforce wing.", "position": [0, 0.95, 1.8] }
+    ]
+  },
+  {
+    "id": "ferrari-laferrari",
+    "brand": "Ferrari",
+    "name": "LaFerrari",
+    "year": "2013",
+    "subtitle": "6.3L F140FE V12 HY-KERS",
+    "modelPath": "/models/ferrari-laferrari/scene.glb",
+    "specs": {
+      "hp": "950 HP",
+      "speed": "217 MPH",
+      "zeroSixty": "2.6s",
+      "engine": "6.3L V12 + KERS"
+    },
+    "hotspots": [
+      { "id": "engine", "label": "F140 V12 Engine", "detail": "Naturally aspirated 6.3L engine revving to 9,250 RPM.", "position": [0, 0.85, 0.5] },
+      { "id": "cockpit", "label": "F1-Derived Cockpit", "detail": "Integrated seats sculpted directly into the carbon chassis.", "position": [0.35, 0.75, -0.2] },
+      { "id": "spoiler", "label": "Active Diffuser & Flaps", "detail": "Automated aerodynamic elements modulating downforce.", "position": [0, 0.85, 1.9] }
+    ]
+  },
+  {
+    "id": "mclaren-p1",
+    "brand": "McLaren",
+    "name": "P1",
+    "year": "2014",
+    "subtitle": "3.8L Twin-Turbo V8 Hybrid",
+    "modelPath": "/models/mclaren-p1/scene.glb",
+    "specs": {
+      "hp": "903 HP",
+      "speed": "217 MPH",
+      "zeroSixty": "2.7s",
+      "engine": "3.8L Twin-Turbo V8 + Electric"
+    },
+    "hotspots": [
+      { "id": "engine", "label": "M838TQ Twin-Turbo V8", "detail": "Mid-mounted 3.8-litre engine paired with lightweight e-motor.", "position": [0, 0.88, 0.45] },
+      { "id": "cockpit", "label": "MonoCage Cockpit", "detail": "Minimalist exposed carbon fiber tub with digital race cluster.", "position": [0.35, 0.78, -0.25] },
+      { "id": "spoiler", "label": "Extendable Rear Wing", "detail": "Extends up to 300mm in Race Mode with DRS actuation.", "position": [0, 0.95, 1.85] }
+    ]
+  }
+]
