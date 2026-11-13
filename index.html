@@ -1,69 +1,13 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js';
-
-// 1. Scene & Camera Setup
-const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x0a0a0a);
-
-const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(5, 2, 5);
-
-const renderer = new THREE.WebGLRenderer({ antialias: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-document.body.appendChild(renderer.domElement);
-
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-
-// 2. Essential Lighting (Fixes black screen / invisible models)
-const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
-scene.add(ambientLight);
-
-const dirLight = new THREE.DirectionalLight(0xffffff, 3.0);
-dirLight.position.set(10, 20, 10);
-scene.add(dirLight);
-
-const pointLight = new THREE.DirectionalLight(0xffaa00, 2.0);
-pointLight.position.set(-10, -10, -10);
-scene.add(pointLight);
-
-// 3. Robust GLTF Model Loading with Error Logging
-const loader = new GLTFLoader();
-loader.load(
-    './public/models/ferrari-laferrari/scene.gltf', // Ensure path matches your static structure
-    (gltf) => {
-        const model = gltf.scene;
-        
-        // Center and scale model automatically
-        const box = new THREE.Box3().setFromObject(model);
-        const center = box.getCenter(new THREE.Vector3());
-        model.position.sub(center); // center model at origin
-        
-        scene.add(model);
-        console.log('Model loaded successfully');
-    },
-    (xhr) => {
-        console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-    },
-    (error) => {
-        console.error('An error happened while loading the GLTF model:', error);
-    }
-);
-
-// 4. Render Loop
-window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-});
-
-function animate() {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-}
-
-animate();
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supercar Showroom</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
