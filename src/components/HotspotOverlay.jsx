@@ -37,14 +37,14 @@ export default function HotspotOverlay({ hotspots, activeHotspot, onSelectHotspo
             </button>
 
             {isActive && (
-              <div className="absolute left-9 -top-4 bg-black/80 border border-white/15 backdrop-blur-2xl p-3.5 rounded-xl shadow-2xl w-56 text-left pointer-events-auto">
+              <div className="absolute left-9 -top-4 bg-black/90 border border-white/20 backdrop-blur-2xl p-3.5 rounded-xl shadow-2xl w-56 text-left pointer-events-auto">
                 <div className="flex items-center justify-between">
                   <span className="text-[9px] text-neutral-400 font-mono uppercase tracking-[0.2em]">
                     Specification
                   </span>
                   <button
                     onClick={() => onSelectHotspot(null)}
-                    className="text-[10px] font-mono text-neutral-500 hover:text-white"
+                    className="text-[10px] font-mono text-neutral-400 hover:text-white px-1.5 py-0.5 rounded hover:bg-white/10 transition-colors"
                   >
                     ✕
                   </button>
