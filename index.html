@@ -3,80 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Supercar Showroom</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css" />
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.170.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.170.0/examples/jsm/"
-      }
+  <title>Apex Showcase — Supercar Experience</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" />
+  <style>
+    :root {
+      --bg-color: #0b0b0e;
+      --text-main: #f4f4f6;
+      --text-muted: #8e8e93;
+      --accent: #d4af37;
+      --glass-bg: rgba(20, 20, 25, 0.6);
+      --glass-border: rgba(255, 255, 255, 0.08);
     }
-  </script>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+    }
+    #webgl-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .editorial-header {
+      position: absolute;
+      top: 40px;
+      left: 60px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .editorial-header h1 {
+      font-weight: 300;
+      font-size: 2.2rem;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+    .editorial-header p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .view-controls {
+      position: absolute;
+      bottom: 40px;
+      right: 60px;
+      z-index: 10;
+      display: flex;
+      gap: 12px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      padding: 8px 16px;
+      border-radius: 30px;
+    }
+    .view-controls button {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+      padding: 6px 12px;
+      transition: color 0.3s ease;
+    }
+    .view-controls button.active, .view-controls button:hover {
+      color: var(--text-main);
+    }
+  </style>
 </head>
 <body>
-  <div class="loader-overlay" id="loader">
-    <span class="eyebrow">Preparing Studio</span>
+
+  <div class="editorial-header">
+    <p>Exhibition 01</p>
+    <h1>LaFerrari Aerodynamics</h1>
   </div>
 
-  <main class="showroom-stage">
-    <canvas id="webgl-canvas"></canvas>
+  <div id="webgl-container"></div>
 
-    <header class="hud-top">
-      <div class="brand-block">
-        <span class="eyebrow">01 / Grand Tourer</span>
-        <h1 class="car-title">V12 Berlinetta</h1>
-      </div>
-      <button class="editorial-btn" id="toggle-specs" type="button">Specifications +</button>
-    </header>
+  <div class="view-controls">
+    <button class="active" data-view="studio">Studio</button>
+    <button data-view="profile">Profile</button>
+    <button data-view="rear">Rear</button>
+  </div>
 
-    <footer class="hud-bottom">
-      <nav class="camera-presets" aria-label="Camera views">
-        <button class="preset-btn is-active" data-view="hero" type="button">Profile</button>
-        <button class="preset-btn" data-view="front" type="button">Three-Quarter</button>
-        <button class="preset-btn" data-view="rear" type="button">Rear</button>
-      </nav>
-
-      <div class="paint-swatches" role="group" aria-label="Exterior paint finish">
-        <button class="swatch is-active" data-color="#1b1c1e" aria-label="Obsidian Black" type="button"></button>
-        <button class="swatch" data-color="#8c2d23" aria-label="Rosso Corsa" type="button"></button>
-        <button class="swatch" data-color="#d8d3c8" aria-label="Chalk Stone" type="button"></button>
-      </div>
-    </footer>
-
-    <aside class="specs-drawer" id="specs-drawer" aria-hidden="true">
-      <div class="drawer-header">
-        <span class="eyebrow">Technical Sheet</span>
-        <button class="editorial-btn" id="close-specs" type="button">Close —</button>
-      </div>
-      <dl class="specs-list">
-        <div>
-          <dt>Powertrain</dt>
-          <dd>6.5L Naturally Aspirated V12</dd>
-        </div>
-        <div>
-          <dt>Output</dt>
-          <dd>800 CV @ 8,500 rpm</dd>
-        </div>
-        <div>
-          <dt>0–100 km/h</dt>
-          <dd>2.9 sec</dd>
-        </div>
-        <div>
-          <dt>Top Speed</dt>
-          <dd>340 km/h</dd>
-        </div>
-        <div>
-          <dt>Dry Weight</dt>
-          <dd>1,525 kg</dd>
-        </div>
-      </dl>
-    </aside>
-  </main>
-
-  <script type="module" src="./app.js"></script>
+  <!-- Include scripts -->
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>
