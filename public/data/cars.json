@@ -5,7 +5,7 @@
     "name": "LaFerrari",
     "year": "2015",
     "tag": "HY-KERS V12 Flagship",
-    "modelPath": "/models/ferrari-laferrari/scene.gltf",
+    "modelPath": "models/ferrari-laferrari/scene.gltf",
     "description": "Maranello's first hybrid hypercar pairing a 6.3L naturally aspirated V12 with an F1-derived kinetic energy recovery system.",
     "specs": {
       "hp": "950 HP",
@@ -40,7 +40,7 @@
     "name": "P1",
     "year": "2014",
     "tag": "Twin-Turbo Hybrid Hypercar",
-    "modelPath": "/models/mclaren-p1/scene.gltf",
+    "modelPath": "models/mclaren-p1/scene.gltf",
     "description": "Engineered around a 90 kg MonoCage carbon structure with RaceActive Chassis Control and instant electric torque fill.",
     "specs": {
       "hp": "903 HP",
@@ -75,7 +75,7 @@
     "name": "918 Spyder",
     "year": "2015",
     "tag": "Plug-In Hybrid Spyder",
-    "modelPath": "/models/porsche-918.com/scene.gltf",
+    "modelPath": "models/porsche-918.com/scene.gltf",
     "description": "All-wheel-drive plug-in hybrid combining a high-revving 4.6L V8 with dual electric motors and top-exit exhaust pipes.",
     "specs": {
       "hp": "887 HP",
