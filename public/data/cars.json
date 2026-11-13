@@ -1,15 +1,38 @@
-{
-  "id": "ferrari-laferrari",
-  "name": "LaFerrari",
-  "tagline": "Hybrid Hypercar Architecture",
-  "specs": {
-    "power": "950 HP",
-    "acceleration": "< 2.9s",
-    "topSpeed": "350 km/h"
+[
+  {
+    "id": "laferrari",
+    "name": "Ferrari LaFerrari",
+    "tag": "Flagship Hybrid V12",
+    "description": "A limited-production hybrid sports car combining a naturally aspirated V12 engine with HY-KERS technology for instantaneous torque and peak efficiency.",
+    "specs": {
+      "hp": "950 HP",
+      "acceleration": "2.6s",
+      "topSpeed": "350 km/h"
+    },
+    "image": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1200&auto=format&fit=crop"
   },
-  "features": [
-    "HY-KERS System",
-    "Active Aerodynamics",
-    "Carbon Fiber Monocoque"
-  ]
-}
+  {
+    "id": "gt3-rs",
+    "name": "Porsche 911 GT3 RS",
+    "tag": "Track Precision",
+    "description": "Engineered for uncompromising performance with active aerodynamics, lightweight glass construction, and motorsport-derived suspension.",
+    "specs": {
+      "hp": "518 HP",
+      "acceleration": "3.0s",
+      "topSpeed": "296 km/h"
+    },
+    "image": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    "id": "svj",
+    "name": "Lamborghini Aventador SVJ",
+    "tag": "V12 Aerodinamica",
+    "description": "Featuring ALA 2.0 active aerodynamics system and a roaring V12 powerplant designed to dominate both asphalt and circuit.",
+    "specs": {
+      "hp": "770 HP",
+      "acceleration": "2.8s",
+      "topSpeed": "352 km/h"
+    },
+    "image": "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=1200&auto=format&fit=crop"
+  }
+]
