@@ -5,30 +5,10 @@ export default function HotspotOverlay({ hotspots, activeHotspot, onSelectHotspo
 
   return (
     <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-      <svg className="w-full h-full">
-        {hotspots.map((h) => {
-          if (!h.visible) return null;
-          const isActive = activeHotspot?.id === h.id;
-          return (
-            isActive && (
-              <line
-                key={`line-${h.id}`}
-                x1={h.x}
-                y1={h.y}
-                x2={h.x + 45}
-                y2={h.y - 35}
-                stroke="#10b981"
-                strokeWidth="1.5"
-                strokeDasharray="3 3"
-              />
-            )
-          );
-        })}
-      </svg>
-
       {hotspots.map((h) => {
         if (!h.visible) return null;
         const isActive = activeHotspot?.id === h.id;
+
         return (
           <div
             key={h.id}
@@ -37,17 +17,42 @@ export default function HotspotOverlay({ hotspots, activeHotspot, onSelectHotspo
           >
             <button
               onClick={() => onSelectHotspot(isActive ? null : h)}
-              className="relative w-6 h-6 flex items-center justify-center"
+              aria-label={h.label}
+              className="group relative w-7 h-7 flex items-center justify-center"
             >
-              <span className="absolute w-full h-full rounded-full bg-emerald-400/25 animate-ping"></span>
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-slate-950 shadow-md"></span>
+              <span
+                className={`absolute w-full h-full rounded-full transition-all duration-500 ${
+                  isActive
+                    ? 'bg-white/25 scale-125'
+                    : 'bg-white/10 group-hover:bg-white/20 animate-ping'
+                }`}
+              />
+              <span
+                className={`relative w-2.5 h-2.5 rounded-full border transition-all ${
+                  isActive
+                    ? 'bg-white border-white scale-110'
+                    : 'bg-black/80 border-white/80 group-hover:bg-white'
+                }`}
+              />
             </button>
 
             {isActive && (
-              <div className="absolute left-12 -top-10 bg-slate-950/90 border border-emerald-500/40 backdrop-blur-md p-3 rounded-xl shadow-2xl w-52 text-left pointer-events-auto">
-                <span className="text-[10px] text-emerald-400 font-mono uppercase tracking-wider block">Component Info</span>
-                <h5 className="text-xs font-bold text-white mt-0.5">{h.label}</h5>
-                <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">{h.detail}</p>
+              <div className="absolute left-9 -top-4 bg-black/80 border border-white/15 backdrop-blur-2xl p-3.5 rounded-xl shadow-2xl w-56 text-left pointer-events-auto">
+                <div className="flex items-center justify-between">
+                  <span className="text-[9px] text-neutral-400 font-mono uppercase tracking-[0.2em]">
+                    Specification
+                  </span>
+                  <button
+                    onClick={() => onSelectHotspot(null)}
+                    className="text-[10px] font-mono text-neutral-500 hover:text-white"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <h5 className="text-xs font-medium text-white mt-1">{h.label}</h5>
+                <p className="text-[11px] text-neutral-400 mt-1.5 leading-relaxed font-light">
+                  {h.detail}
+                </p>
               </div>
             )}
           </div>

@@ -1,38 +1,107 @@
 [
   {
-    "id": "laferrari",
-    "name": "Ferrari LaFerrari",
-    "tag": "Flagship Hybrid V12",
-    "description": "A limited-production hybrid sports car combining a naturally aspirated V12 engine with HY-KERS technology for instantaneous torque and peak efficiency.",
+    "id": "ferrari-laferrari",
+    "brand": "Ferrari",
+    "name": "LaFerrari",
+    "year": "2015",
+    "tag": "HY-KERS V12 Flagship",
+    "modelPath": "/models/ferrari-laferrari/scene.gltf",
+    "description": "Maranello's first hybrid hypercar pairing a 6.3L naturally aspirated V12 with an F1-derived kinetic energy recovery system.",
     "specs": {
       "hp": "950 HP",
-      "acceleration": "2.6s",
-      "topSpeed": "350 km/h"
+      "zeroSixty": "2.6s",
+      "topSpeed": "350 km/h",
+      "weight": "1,255 kg"
     },
-    "image": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1200&auto=format&fit=crop"
+    "hotspots": [
+      {
+        "id": "lf-powertrain",
+        "label": "6.3L V12 + HY-KERS",
+        "detail": "800 CV combustion engine paired with a 120 kW electric motor revving to 9,250 rpm.",
+        "position": [0, 0.72, -1.15]
+      },
+      {
+        "id": "lf-aero",
+        "label": "Active Underbody Aero",
+        "detail": "Automatically deploys front and rear diffusers and active rear wing based on telemetry.",
+        "position": [0, 0.78, -1.95]
+      },
+      {
+        "id": "lf-cockpit",
+        "label": "Fixed Carbon Monocoque",
+        "detail": "F1-inspired sculpted seat integrated directly into the T800 carbon-fiber tub.",
+        "position": [0.32, 0.92, 0.1]
+      }
+    ]
   },
   {
-    "id": "gt3-rs",
-    "name": "Porsche 911 GT3 RS",
-    "tag": "Track Precision",
-    "description": "Engineered for uncompromising performance with active aerodynamics, lightweight glass construction, and motorsport-derived suspension.",
+    "id": "mclaren-p1",
+    "brand": "McLaren",
+    "name": "P1",
+    "year": "2014",
+    "tag": "Twin-Turbo Hybrid Hypercar",
+    "modelPath": "/models/mclaren-p1/scene.gltf",
+    "description": "Engineered around a 90 kg MonoCage carbon structure with RaceActive Chassis Control and instant electric torque fill.",
     "specs": {
-      "hp": "518 HP",
-      "acceleration": "3.0s",
-      "topSpeed": "296 km/h"
+      "hp": "903 HP",
+      "zeroSixty": "2.8s",
+      "topSpeed": "350 km/h",
+      "weight": "1,395 kg"
     },
-    "image": "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1200&auto=format&fit=crop"
+    "hotspots": [
+      {
+        "id": "p1-wing",
+        "label": "DRS Rear Wing",
+        "detail": "Extends rearward by 300 mm in Race Mode, generating 600 kg of downforce.",
+        "position": [0, 0.95, -1.85]
+      },
+      {
+        "id": "p1-engine",
+        "label": "3.8L M838TQ Twin-Turbo",
+        "detail": "Mid-mounted twin-turbocharged V8 coupled with an in-house lightweight e-motor.",
+        "position": [0, 0.75, -0.95]
+      },
+      {
+        "id": "p1-brakes",
+        "label": "Akebono Carbon-Ceramic",
+        "detail": "Silicon-carbide coated discs engineered for repeatable track thermal dissipation.",
+        "position": [0.85, 0.38, 1.25]
+      }
+    ]
   },
   {
-    "id": "svj",
-    "name": "Lamborghini Aventador SVJ",
-    "tag": "V12 Aerodinamica",
-    "description": "Featuring ALA 2.0 active aerodynamics system and a roaring V12 powerplant designed to dominate both asphalt and circuit.",
+    "id": "porsche-918",
+    "brand": "Porsche",
+    "name": "918 Spyder",
+    "year": "2015",
+    "tag": "Plug-In Hybrid Spyder",
+    "modelPath": "/models/porsche-918.com/scene.gltf",
+    "description": "All-wheel-drive plug-in hybrid combining a high-revving 4.6L V8 with dual electric motors and top-exit exhaust pipes.",
     "specs": {
-      "hp": "770 HP",
-      "acceleration": "2.8s",
-      "topSpeed": "352 km/h"
+      "hp": "887 HP",
+      "zeroSixty": "2.5s",
+      "topSpeed": "345 km/h",
+      "weight": "1,640 kg"
     },
-    "image": "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=1200&auto=format&fit=crop"
+    "hotspots": [
+      {
+        "id": "918-exhaust",
+        "label": "Top-Pipe Exhaust System",
+        "detail": "Directs hot exhaust gases immediately upward to keep the engine bay and battery cool.",
+        "position": [0, 0.88, -0.9]
+      },
+      {
+        "id": "918-front",
+        "label": "Front Axle E-Motor",
+        "detail": "Independent 95 kW electric drive unit powering the front wheels with torque vectoring.",
+        "position": [0, 0.45, 1.35]
+      },
+      {
+        "id": "918-cockpit",
+        "label": "Weissach Carbon Cockpit",
+        "detail": "Floating center console with haptic glass interface and exposed matte carbon weave.",
+        "position": [0.32, 0.88, 0.15]
+      }
+    ]
   }
 ]
