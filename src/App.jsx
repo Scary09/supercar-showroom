@@ -35,7 +35,7 @@ export default function App() {
   const currentTheme = THEMES[currentThemeKey];
 
   useEffect(() => {
-    fetch('/data/cars.json')
+    fetch(`${import.meta.env.BASE_URL}data/cars.json`)
       .then((res) => res.json())
       .then((data) => {
         setCars(data);
